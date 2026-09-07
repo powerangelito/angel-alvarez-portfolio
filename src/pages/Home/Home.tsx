@@ -4,6 +4,7 @@ import { Hero } from '@/components/section/Hero';
 import { Footer } from '@/components/layout/Footer';
 import { Experience } from '@/components/section/Experience';
 import { Skills } from "@/components/section/Skills";
+import { Projects } from "@/components/section/Projects";
 
 export function Home() {
   return (
@@ -15,6 +16,7 @@ export function Home() {
         <About />
         <Experience />
         <Skills />
+        <Projects />
       </main>
 
       <Footer />
