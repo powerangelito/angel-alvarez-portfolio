@@ -1,11 +1,10 @@
+import { Link } from 'react-router-dom';
+
 export function NavbarLogo() {
-    return (
-        <a
-            href="#home"
-            className="flex items-center gap-3"
-        >
-            <div
-                className="
+  return (
+    <Link to="/#home" className="flex items-center gap-3">
+      <div
+        className="
                 flex
                 h-10
                 w-10
@@ -16,19 +15,15 @@ export function NavbarLogo() {
                 font-bold
                 text-white
             "
-            >
-                A
-            </div>
+      >
+        A
+      </div>
 
-            <div>
-                <p className="font-bold">
-                    Angel Alvarez
-                </p>
+      <div>
+        <p className="font-bold">Angel Alvarez</p>
 
-                <span className="text-xs text-zinc-500">
-                    Full Stack Developer
-                </span>
-            </div>
-        </a>
-    );
+        <span className="text-xs text-zinc-500">Full Stack Developer</span>
+      </div>
+    </Link>
+  );
 }

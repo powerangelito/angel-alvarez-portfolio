@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { navigation } from "../../../constants/navigation";
 
 export function NavbarMenu() {
@@ -5,8 +7,8 @@ export function NavbarMenu() {
         <ul className="hidden items-center gap-8 lg:flex">
             {navigation.map((item) => (
                 <li key={item.href}>
-                    <a
-                        href={item.href}
+                    <Link
+                        to={item.href}
                         className="
                             text-sm
                             font-medium
@@ -16,7 +18,7 @@ export function NavbarMenu() {
                         "
                     >
                         {item.label}
-                    </a>
+                    </Link>
                 </li>
             ))}
         </ul>

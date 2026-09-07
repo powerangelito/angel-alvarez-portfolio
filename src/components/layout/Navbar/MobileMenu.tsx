@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { navigation } from '../../../constants/navigation';
 
 interface MobileMenuProps {
@@ -34,8 +36,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <ul className="flex flex-col gap-2">
           {navigation.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 onClick={onClose}
                 className="
                   block
@@ -51,7 +53,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 "
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
