@@ -5,6 +5,8 @@ import { getCaseStudyBySlug } from '@/app/config/caseStudies';
 import { Container } from '@/components/ui/Container';
 import { Badge } from '@/components/ui/Badge';
 
+import { ArchitectureDiagram } from '@/components/case-study/ArchitectureDiagram';
+
 export function ProjectDetail() {
   const { slug } = useParams();
 
@@ -155,6 +157,8 @@ export function ProjectDetail() {
               Cómo está construida la solución
             </h2>
           </div>
+          
+          <ArchitectureDiagram />
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {caseStudy.architecture.map((item) => (
