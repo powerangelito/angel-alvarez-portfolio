@@ -1,34 +1,29 @@
-import type { Project } from "@/types/project";
+import type { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
-    slug: "delice",
-    title: "Delice",
+    slug: 'delice',
+    title: 'Délice',
     description:
-      "Aplicación móvil desarrollada para una panadería, con frontend en Flutter y una API construida en C#. La solución integra servicios de datos y un flujo de integración y despliegue continuo.",
+      'Aplicación móvil e-commerce desarrollada para una panadería, orientada a la gestión del catálogo, pedidos, clientes y entregas.',
     technologies: [
-      "Flutter",
-      "C#",
-      "ASP.NET Core",
-      "Supabase",
-      "Railway",
-      "GitHub Actions",
+      'Flutter',
+      'C#',
+      '.NET',
+      'Supabase',
+      'Railway',
+      'GitHub Actions',
     ],
-    status: "production",
+    status: 'development',
     featured: true,
   },
   {
-    slug: "pharmacy-system",
-    title: "Sistema para farmacia",
+    slug: 'pharmacy-system',
+    title: 'Sistema para farmacia',
     description:
-      "Aplicación web para la administración de consultas y la gestión del punto de venta de medicamentos, incluyendo el control de entradas y salidas.",
-    technologies: [
-      "React",
-      "C#",
-      "ASP.NET Core",
-      "Supabase",
-    ],
-    status: "development",
+      'Aplicación web para la administración de consultas y la gestión del punto de venta de medicamentos, incluyendo el control de entradas y salidas.',
+    technologies: ['React', 'C#', 'ASP.NET Core', 'Supabase'],
+    status: 'development',
     featured: true,
   },
 ];

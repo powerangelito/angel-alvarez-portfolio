@@ -1,24 +1,28 @@
-import { ArrowUpRight } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { ArrowUpRight } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
-import { Badge } from "../Badge";
+import { Badge } from '../Badge';
+
+import { Link } from 'react-router-dom';
 
 interface ProjectCardProps {
+  slug: string;
   title: string;
   description: string;
   technologies: string[];
-  status: "production" | "development" | "completed";
+  status: 'production' | 'development' | 'completed';
   repositoryUrl?: string;
   demoUrl?: string;
 }
 
 const statusLabels = {
-  production: "En producción",
-  development: "En desarrollo",
-  completed: "Completado",
+  production: 'En producción',
+  development: 'En desarrollo',
+  completed: 'Completado',
 };
 
 export function ProjectCard({
+  slug,
   title,
   description,
   technologies,
@@ -73,12 +77,29 @@ export function ProjectCard({
 
       <div className="mt-6 flex flex-wrap gap-2">
         {technologies.map((technology) => (
-          <Badge key={technology}>
-            {technology}
-          </Badge>
+          <Badge key={technology}>{technology}</Badge>
         ))}
       </div>
 
+      {slug === 'delice' && (
+        <Link
+          to={`/projects/${slug}`}
+          className="
+            mt-6
+            inline-flex
+            items-center
+            gap-2
+            text-sm
+            font-semibold
+            text-blue-500
+            transition-colors
+            hover:text-blue-400
+            "
+        >
+          Ver caso de estudio
+          <ArrowUpRight size={16} />
+        </Link>
+      )}
       {(repositoryUrl || demoUrl) && (
         <div className="mt-6 flex flex-wrap gap-4 border-t border-border pt-5">
           {repositoryUrl && (
