@@ -1,9 +1,9 @@
-import { ArrowLeft } from "lucide-react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { ArrowLeft } from 'lucide-react';
+import { Link, Navigate, useParams } from 'react-router-dom';
 
-import { getCaseStudyBySlug } from "@/app/config/caseStudies";
-import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
+import { getCaseStudyBySlug } from '@/app/config/caseStudies';
+import { Container } from '@/components/ui/Container';
+import { Badge } from '@/components/ui/Badge';
 
 export function ProjectDetail() {
   const { slug } = useParams();
@@ -19,7 +19,7 @@ export function ProjectDetail() {
   }
 
   return (
-    <main>
+    <>
       <section className="border-b border-border py-20">
         <Container>
           <Link
@@ -58,20 +58,14 @@ export function ProjectDetail() {
 
             <div className="mt-8 flex flex-wrap gap-2">
               {caseStudy.technologies.map((technology) => (
-                <Badge key={technology}>
-                  {technology}
-                </Badge>
+                <Badge key={technology}>{technology}</Badge>
               ))}
             </div>
 
             <div className="mt-8 border-l-2 border-blue-500 pl-4">
-              <p className="text-sm text-muted-foreground">
-                Estado actual
-              </p>
+              <p className="text-sm text-muted-foreground">Estado actual</p>
 
-              <p className="mt-1 font-medium">
-                {caseStudy.status}
-              </p>
+              <p className="mt-1 font-medium">{caseStudy.status}</p>
             </div>
           </div>
         </Container>
@@ -85,17 +79,12 @@ export function ProjectDetail() {
                 El reto
               </p>
 
-              <h2 className="mt-3 text-3xl font-bold">
-                El problema
-              </h2>
+              <h2 className="mt-3 text-3xl font-bold">El problema</h2>
             </div>
 
             <div className="space-y-4">
               {caseStudy.problems.map((problem) => (
-                <p
-                  key={problem}
-                  className="leading-7 text-muted-foreground"
-                >
+                <p key={problem} className="leading-7 text-muted-foreground">
                   {problem}
                 </p>
               ))}
@@ -106,9 +95,7 @@ export function ProjectDetail() {
 
       <section className="border-y border-border bg-card/30 py-20">
         <Container>
-          <h2 className="text-3xl font-bold">
-            Funcionalidades principales
-          </h2>
+          <h2 className="text-3xl font-bold">Funcionalidades principales</h2>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {caseStudy.features.map((feature) => (
@@ -116,9 +103,7 @@ export function ProjectDetail() {
                 key={feature.title}
                 className="rounded-2xl border border-border bg-card p-6"
               >
-                <h3 className="font-semibold">
-                  {feature.title}
-                </h3>
+                <h3 className="font-semibold">{feature.title}</h3>
 
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
                   {feature.description}
@@ -137,9 +122,7 @@ export function ProjectDetail() {
                 Participación
               </p>
 
-              <h2 className="mt-3 text-3xl font-bold">
-                Mi responsabilidad
-              </h2>
+              <h2 className="mt-3 text-3xl font-bold">Mi responsabilidad</h2>
             </div>
 
             <ul className="space-y-4">
@@ -179,9 +162,7 @@ export function ProjectDetail() {
                 key={item.title}
                 className="rounded-2xl border border-border bg-card p-6"
               >
-                <h3 className="text-lg font-semibold">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
 
                 <p className="mt-3 leading-7 text-muted-foreground">
                   {item.description}
@@ -189,9 +170,7 @@ export function ProjectDetail() {
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {item.technologies.map((technology) => (
-                    <Badge key={technology}>
-                      {technology}
-                    </Badge>
+                    <Badge key={technology}>{technology}</Badge>
                   ))}
                 </div>
               </article>
@@ -210,10 +189,7 @@ export function ProjectDetail() {
 
               <ul className="mt-6 space-y-4">
                 {caseStudy.deployment.map((item) => (
-                  <li
-                    key={item}
-                    className="leading-7 text-muted-foreground"
-                  >
+                  <li key={item} className="leading-7 text-muted-foreground">
                     {item}
                   </li>
                 ))}
@@ -221,16 +197,11 @@ export function ProjectDetail() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold">
-                Resultado
-              </h2>
+              <h2 className="text-2xl font-bold">Resultado</h2>
 
               <ul className="mt-6 space-y-4">
                 {caseStudy.result.map((item) => (
-                  <li
-                    key={item}
-                    className="leading-7 text-muted-foreground"
-                  >
+                  <li key={item} className="leading-7 text-muted-foreground">
                     {item}
                   </li>
                 ))}
@@ -239,6 +210,6 @@ export function ProjectDetail() {
           </div>
         </Container>
       </section>
-    </main>
+    </>
   );
 }

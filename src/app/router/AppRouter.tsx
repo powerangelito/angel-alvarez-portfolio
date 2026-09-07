@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { RootLayout } from '@/components/layout/RootLayout';
 import { Home } from '@/pages/Home';
 import { ProjectDetail } from '@/pages/ProjectDetail';
 
@@ -10,9 +11,11 @@ export function AppRouter() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/projects/:slug" element={<ProjectDetail />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
